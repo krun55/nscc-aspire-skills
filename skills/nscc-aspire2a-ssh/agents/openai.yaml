@@ -1,4 +1,0 @@
-interface:
-  display_name: "NSCC ASPIRE2A SSH Setup"
-  short_description: "Configure SSH aliases and keys for NUS NSCC ASPIRE 2A access."
-  default_prompt: "Set up my NSCC ASPIRE 2A SSH access from my username and private key."

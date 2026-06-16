@@ -1,14 +1,14 @@
-# ASPIRE Codex Skills
+# ASPIRE Claude Code Skills
 
 English | [中文](#中文)
 
-A small public skill pack for working with NSCC Singapore ASPIRE 2A from Codex.
+A small public skill pack for working with NSCC Singapore ASPIRE 2A from Claude Code (cc).
 It currently contains two skills:
 
 - `nscc-aspire2a-ssh`: configure SSH aliases, private-key placement, VPN checks, and basic ASPIRE 2A login validation.
 - `aspire-hf-download`: download large Hugging Face models or datasets reliably on ASPIRE 2A through PBS jobs, `huggingface_hub.snapshot_download`, Xet support, and scratch storage.
 
-These skills are written as Codex `SKILL.md` directories. You can install the whole pack or copy only the skill you need.
+These skills are written as standard `SKILL.md` directories that Claude Code discovers automatically. You can install the whole pack or copy only the skill you need.
 
 ## Install
 
@@ -21,22 +21,22 @@ bash install.sh
 By default the installer copies both skill directories into:
 
 ```text
-${CODEX_HOME:-$HOME/.codex}/skills
+${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills
 ```
 
 To install manually:
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R skills/aspire-hf-download "${CODEX_HOME:-$HOME/.codex}/skills/"
-cp -R skills/nscc-aspire2a-ssh "${CODEX_HOME:-$HOME/.codex}/skills/"
+mkdir -p "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills"
+cp -R skills/aspire-hf-download "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills/"
+cp -R skills/nscc-aspire2a-ssh "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills/"
 ```
 
-Restart Codex after installing if the new skills are not discovered immediately.
+Restart Claude Code after installing if the new skills are not discovered immediately.
 
 ## Usage
 
-Ask Codex for the workflow you need:
+Ask Claude Code for the workflow you need:
 
 ```text
 Set up my NSCC ASPIRE 2A SSH access.
@@ -69,7 +69,6 @@ skills/
     SKILL.md
   nscc-aspire2a-ssh/
     SKILL.md
-    agents/openai.yaml
     references/classmate-quickstart.md
     scripts/setup_nscc_aspire2a_ssh.sh
 ```
@@ -82,13 +81,13 @@ MIT License. See [LICENSE](LICENSE).
 
 # 中文
 
-这是一个面向 NSCC Singapore ASPIRE 2A 的 Codex skill 小合集，公开发布，方便复用和分享。
+这是一个面向 NSCC Singapore ASPIRE 2A 的 Claude Code（cc）skill 小合集，公开发布，方便复用和分享。
 当前包含两个 skill：
 
 - `nscc-aspire2a-ssh`：配置 ASPIRE 2A SSH 访问，包括 SSH alias、私钥落盘、NUS VPN 检查、登录验证和基础排障。
 - `aspire-hf-download`：在 ASPIRE 2A 上稳定下载 Hugging Face 模型或数据集，使用 PBS 作业、`huggingface_hub.snapshot_download`、Xet 支持和 scratch 存储。
 
-这些 skill 都是标准的 Codex `SKILL.md` 目录。可以整包安装，也可以只复制需要的一个 skill。
+这些 skill 都是标准的 `SKILL.md` 目录，Claude Code 会自动发现。可以整包安装，也可以只复制需要的一个 skill。
 
 ## 安装
 
@@ -101,22 +100,22 @@ bash install.sh
 默认会复制到：
 
 ```text
-${CODEX_HOME:-$HOME/.codex}/skills
+${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills
 ```
 
 也可以手动安装：
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R skills/aspire-hf-download "${CODEX_HOME:-$HOME/.codex}/skills/"
-cp -R skills/nscc-aspire2a-ssh "${CODEX_HOME:-$HOME/.codex}/skills/"
+mkdir -p "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills"
+cp -R skills/aspire-hf-download "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills/"
+cp -R skills/nscc-aspire2a-ssh "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills/"
 ```
 
-如果 Codex 没有马上识别新 skill，重启 Codex 即可。
+如果 Claude Code 没有马上识别新 skill，重启即可。
 
 ## 使用方式
 
-直接告诉 Codex 你要做的事情，例如：
+直接告诉 Claude Code 你要做的事情，例如：
 
 ```text
 帮我配置 NSCC ASPIRE 2A 的 SSH 登录。
@@ -149,7 +148,6 @@ skills/
     SKILL.md
   nscc-aspire2a-ssh/
     SKILL.md
-    agents/openai.yaml
     references/classmate-quickstart.md
     scripts/setup_nscc_aspire2a_ssh.sh
 ```
